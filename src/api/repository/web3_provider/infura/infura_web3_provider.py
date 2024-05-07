@@ -20,7 +20,7 @@ class InfuraWeb3Provider(web3_provider.Web3Provider):
     def __init__(self) -> None:
         super().__init__()
         self.w3 = Web3(
-            Web3.HTTPProvider(f"https://mainnet.infura.io/v3/{settings.INFURA_API_KEY}")
+            Web3.HTTPProvider(f"{settings.INFURA_API_URL}/{settings.INFURA_API_KEY}")
         )
 
         if not self.w3.is_connected():
